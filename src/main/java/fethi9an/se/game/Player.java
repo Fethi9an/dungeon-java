@@ -17,7 +17,7 @@ public class Player implements ICombat  {
     private int health;
     private int experience;
     private int level;
-    private int baseDamage;
+    private int baseDamage2;
 
     @Override
     public int fight() {
