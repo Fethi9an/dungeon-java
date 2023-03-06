@@ -21,17 +21,23 @@ public class Player implements ICombat  {
 
     @Override
     public int fight() {
-        return 0;
+        if(didCriticallyStrike()) {
+            System.out.printf("The monster did a critical strike dealing %d dmg!!!\n",calculateDamage() * 2);
+            return calculateDamage() * 2;
+        }
+        else {
+            System.out.printf("The monster dealt %d dmg to you!\n",calculateDamage());
+            return calculateDamage();
+        }
     }
 
     @Override
-    public int calculateDamage() {
-        return 0;
-    }
+    public int calculateDamage() {return baseDamage +(strength*2/4+1);    }
 
     @Override
     public boolean didCriticallyStrike() {
-        return false;
+        int x = (int) (Math.random() * 100+1);
+        return x < intelligence;
     }
 }
 
