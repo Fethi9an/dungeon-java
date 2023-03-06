@@ -32,7 +32,9 @@ public class Player implements ICombat  {
     }
 
     @Override
-    public int calculateDamage() {return baseDamage +(strength*2/4+1);    }
+    public int calculateDamage() {
+        return baseDamage +(strength*2/4+1);
+    }
 
     @Override
     public boolean didCriticallyStrike() {
